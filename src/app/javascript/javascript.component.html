@@ -1,0 +1,19 @@
+<h1 class="topic-title">{{sources.topicName}}</h1>
+
+<h2 class="topic-subtitle">Articles</h2>
+
+<div class="topic-item" *ngFor="let article of sources.articles">
+  <input type="checkbox" [id]="article._id">
+  <label for="article._id">
+    <a [href]="article.url">{{article.name}}</a>  
+  </label>
+</div>
+
+<h2 class="topic-subtitle">Youtube</h2>
+
+<div class="topic-item" *ngFor="let video of sources.youtubeVideos">
+  <input type="checkbox" [id]="video._id">
+  <label for="video._id">
+    <a [href]="video.url">{{video.name}}</a>  
+  </label>
+</div>

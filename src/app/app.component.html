@@ -1,9 +1,10 @@
 <div class="header">
-  <div class="title">JavaScript World</div>
+  <div class="title" (click)="resetTopic()">JavaScript World</div>
   <ul class="topics">
-    <li class="topic" *ngFor="let topic of sources">{{topic.topicName}}</li>
+    <li class="topic" *ngFor="let topic of sources" (click)="changeTopic(topic)">{{topic.topicName}}</li>
   </ul>  
 </div>
 <div class="main">
-  
+  <div *ngIf="!currentTopic">Choose a topic to display</div>
+  <app-javascript *ngIf="currentTopic === 'JavaScript'"></app-javascript>
 </div>
