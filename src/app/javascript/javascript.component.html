@@ -1,17 +1,19 @@
-<h2 class="topic-title">{{jsObjAsArray[0]}}</h2>
+<h2 class="topic-title"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>{{jsObjAsArray[0]}}</h2>
 
 <div *ngFor="let category of jsObjAsArray; let i = index">
   <div *ngIf="i > 0">
-    <h4 class="topic-subtitle">{{jsObjAsKeys[i] | uppercase}}<span>-</span></h4>
+    <h4 class="topic-subtitle">{{jsObjAsKeys[i] | uppercase}}<span class="fa fa-bars"></span></h4>
     <div class="row">
       <div class="column" *ngFor="let article of category">
-          <div class="topic-item" [ngClass]="{'item-done':article.completed}">
+          <div class="topic-item" [ngClass]="{'item-done':article.completed,'item-recommended':article.recommended}">
             <input type="checkbox" [id]="article._id" (change)="toggle(article)" [checked]="article.completed">
             <label for="article._id" class="topic-name label-inline">
               <a [href]="article.url" target="_blank">{{article.name | uppercase}}</a>  
             </label>
+            <span *ngIf="article.recommended"><i>[Personal Favourite]  </i><span class="fa fa-thumbs-o-up"></span></span>
+            <h6>Source: {{article.siteName}}</h6>
             <div class="topic-description" *ngIf="!article.completed">{{article.description}}</div>
-            <a [href]="article.url" class="button" *ngIf="!article.completed">Go..</a>
+            <a [href]="article.url" target="_blank" class="button" *ngIf="!article.completed">Go..<span class="fa fa-paper-plane-o"></span></a>
           </div>
       </div>
     </div>

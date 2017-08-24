@@ -24,8 +24,6 @@ export class JavascriptComponent implements OnInit {
     obj.completed = !obj.completed;
   }
 
-  ngOnInit() {
-    console.dir(Object.keys(this._javascriptModule).map((key) => this._javascriptModule[key]));
-  }
+  ngOnInit() {}
 
 }

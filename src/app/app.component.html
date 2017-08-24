@@ -1,14 +1,19 @@
+<header>
+  <span class="logo" (click)="resetTopic()">WoJS</span>
+</header>
+
 <div class="header">
   <div class="main-title" (click)="resetTopic()">
-    <h1>JavaScript World</h1>
-    <p>Collection of useful sources for diving into javascript world.</p>
+    <h1>World of JavaScript</h1>
+    <p>My Personal collection of useful resources for diving into the javascript world.</p>
   </div>
   <div class="topics">
-    <button class="topic" (click)="resetTopic()">Home</button>
-    <button class="topic button-outline" *ngFor="let topic of sources" (click)="changeTopic(topic)">{{topic.topicName}}</button>
+    <button (click)="resetTopic()">Home</button>
+    <button class="button-outline" *ngFor="let topic of sources" (click)="changeTopic(topic)">{{topic.topicName}}</button>
   </div>  
 </div>
 <div class="main">
-  <div *ngIf="!currentTopic">Choose a topic to display</div>
+  <div class="home-message" *ngIf="!currentTopic">Choose a topic to display</div>
   <app-javascript *ngIf="currentTopic === 'JavaScript'"></app-javascript>
 </div>
+<footer>Developed and designed by <a href="https://github.com/Bazokhan/js-world">Mohamad Albaz</a> - 2017</footer>

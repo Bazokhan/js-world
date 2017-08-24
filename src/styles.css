@@ -1,25 +1,58 @@
-/* You can add global styles to this file, and also import other style files */
+/*General Rules*/
 body {
     margin: 0px;
-    padding: 20px;
+    padding: 0px;
 }
-.header {
-    text-align: center;
-    padding: 0px 20px 30px;
-    margin-bottom: 30px;
-    border-bottom: solid 3px #9b4dca;
+.main {
+    padding: 30px;
 }
-
 .column {
     padding: 10px;
     box-sizing: border-box;
 }
-
+.fa {
+    font-size: 1.2em;
+}
+footer {
+    text-align: center;
+    font-size: 0.8em;
+    padding: 10px;
+    background: linear-gradient(#444, #555);
+    color: #999;
+    margin-top: 20px;
+}
+/*Navbar*/
+header {
+    background: linear-gradient(90deg, #9A4DCA, #9b4dff);
+    line-height: 1em;
+    font-weight: 900;
+    color: #ffffbf;
+    padding: 20px;
+    box-shadow: 0px 2px 3px #aaa;
+}
+.logo {
+    cursor: pointer;
+}
+/*Header Area*/
+.header {
+    text-align: center;
+    padding: 30px 0px 60px;
+    margin: 30px 0px;
+    border-bottom: solid 3px #9b4dca;
+    box-shadow: 0px 2px 3px #aaa;
+}
+.home-message {
+    text-align: center;
+    font-size: 40px;
+    line-height: 40px;
+}
+/*Sources Modules*/
 .topic-subtitle {
     padding: 20px;
     background: #eee;
     cursor: pointer;
-    margin-top: 10px;
+    margin-top: 30px;
+    box-shadow: 0px 1px 5px #aaa;
 }
 .topic-subtitle span {
     float: right;
@@ -28,7 +61,11 @@ body {
     border-left: solid 2px #9b4dca;
     padding: 20px;
     box-sizing: border-box;
-    box-shadow: 2px 2px 2px #eee;
+    box-shadow: 1px 1px 5px #eee;
+    transition: 300ms;
+}
+.topic-item:hover {
+    box-shadow: 3px 3px 8px #aaa;
 }
 .topic-name{
     border-bottom: 1px solid #777;
@@ -39,7 +76,12 @@ body {
 input[type=checkbox]:checked + label{
     text-decoration: line-through;
 }
+.item-recommended {
+    background: #ffffbf;
+}
 .item-done {
-    background: #eee;
-    color: #777;
+    background: linear-gradient(90deg, #9b4dca, #9b4dff);
+}
+.item-done a {
+    color: #fff;
 }
