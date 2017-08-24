@@ -12,7 +12,7 @@ export class AppComponent {
   sources = [];
 
   constructor(private db: DatabaseService) {
-    this.sources = db.sources
+    this.sources = db.arrOfModules
   }
 
   changeTopic(topic) {

@@ -4,13 +4,20 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-javascript',
   templateUrl: './javascript.component.html',
-  styleUrls: ['./javascript.component.css']
+  styles: []
 })
 export class JavascriptComponent implements OnInit {
-  sources: Object;
+  _javascriptModule: Object;
+
+  get jsObjAsArray() {
+    return Object.keys(this._javascriptModule).map((key) => this._javascriptModule[key]);
+  }
+  get jsObjAsKeys() {
+    return Object.keys(this._javascriptModule);
+  }
 
   constructor(private db: DatabaseService) {
-    this.sources = db.sources[0]
+    this._javascriptModule = db.arrOfModules[0]
   }
 
   toggle(obj) {
@@ -18,6 +25,7 @@ export class JavascriptComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.dir(Object.keys(this._javascriptModule).map((key) => this._javascriptModule[key]));
   }
 
 }

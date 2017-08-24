@@ -1,27 +1,19 @@
-<h1 class="topic-title">{{sources.topicName}}</h1>
+<h2 class="topic-title">{{jsObjAsArray[0]}}</h2>
 
-<h2 class="topic-subtitle">Articles</h2>
-
-<div class="topic-item" *ngFor="let article of sources.articles" [ngClass]="{'item-done':article.completed}">
-  <input type="checkbox" [id]="article._id" (change)="toggle(article)" [checked]="article.completed">
-  <label for="article._id" class="topic-name">
-    <a [href]="article.url">{{article.name}}</a>  
-  </label>
-  <div class="topic-description">
-  <h3 class="topic-desc-title">Description</h3>
-    {{article.description}}
-  </div>
-</div>
-
-<h2 class="topic-subtitle">Youtube</h2>
-
-<div class="topic-item" *ngFor="let video of sources.youtubeVideos" [ngClass]="{'item-done':video.completed}">
-  <input type="checkbox" [id]="video._id" (change)="toggle(video)" [checked]="video.completed">
-  <label for="video._id" class="topic-name">
-    <a [href]="video.url">{{video.name}}</a>  
-  </label>
-  <div class="topic-description">
-  <h3 class="topic-desc-title">Description</h3>
-    {{video.description}}
+<div *ngFor="let category of jsObjAsArray; let i = index">
+  <div *ngIf="i > 0">
+    <h4 class="topic-subtitle">{{jsObjAsKeys[i] | uppercase}}<span>-</span></h4>
+    <div class="row">
+      <div class="column" *ngFor="let article of category">
+          <div class="topic-item" [ngClass]="{'item-done':article.completed}">
+            <input type="checkbox" [id]="article._id" (change)="toggle(article)" [checked]="article.completed">
+            <label for="article._id" class="topic-name label-inline">
+              <a [href]="article.url" target="_blank">{{article.name | uppercase}}</a>  
+            </label>
+            <div class="topic-description" *ngIf="!article.completed">{{article.description}}</div>
+            <a [href]="article.url" class="button" *ngIf="!article.completed">Go..</a>
+          </div>
+      </div>
+    </div>
   </div>
 </div>

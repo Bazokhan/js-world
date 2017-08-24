@@ -3,7 +3,10 @@ import { Injectable } from '@angular/core';
 let javaScript = {
   topicName: 'JavaScript',
   articles: [
-    { _id: 'article01', name: 'First Article', url: 'http://www.google.com', description: '...', completed: false },
+    { _id: 'article01', name: 'First Article', url: 'http://www.google.com', description: `
+    This is a sample description for the item This is a sample description for the item This is a sample description for the item 
+    This is a sample description for the item This is a sample description for the item     
+    `, completed: false },
     { _id: 'article02', name: 'Second Article', url: 'http://www.yahoo.com', description: '...', completed: false }
   ],
   youtubeVideos: [
@@ -35,7 +38,7 @@ let nodeJs = {
 @Injectable()
 export class DatabaseService {
 
-  sources = [ javaScript, nodeJs ]
+  arrOfModules = [ javaScript, nodeJs ]
 
   constructor() { }
 

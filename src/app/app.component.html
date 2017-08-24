@@ -1,8 +1,12 @@
 <div class="header">
-  <div class="main-title" (click)="resetTopic()"><h1>JavaScript World</h1></div>
-  <ul class="topics">
-    <li class="topic" *ngFor="let topic of sources" (click)="changeTopic(topic)">{{topic.topicName}}</li>
-  </ul>  
+  <div class="main-title" (click)="resetTopic()">
+    <h1>JavaScript World</h1>
+    <p>Collection of useful sources for diving into javascript world.</p>
+  </div>
+  <div class="topics">
+    <button class="topic" (click)="resetTopic()">Home</button>
+    <button class="topic button-outline" *ngFor="let topic of sources" (click)="changeTopic(topic)">{{topic.topicName}}</button>
+  </div>  
 </div>
 <div class="main">
   <div *ngIf="!currentTopic">Choose a topic to display</div>
