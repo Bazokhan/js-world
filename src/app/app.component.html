@@ -1,5 +1,5 @@
 <div class="header">
-  <div class="title" (click)="resetTopic()">JavaScript World</div>
+  <div class="main-title" (click)="resetTopic()"><h1>JavaScript World</h1></div>
   <ul class="topics">
     <li class="topic" *ngFor="let topic of sources" (click)="changeTopic(topic)">{{topic.topicName}}</li>
   </ul>  

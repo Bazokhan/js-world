@@ -13,6 +13,10 @@ export class JavascriptComponent implements OnInit {
     this.sources = db.sources[0]
   }
 
+  toggle(obj) {
+    obj.completed = !obj.completed;
+  }
+
   ngOnInit() {
   }
 
