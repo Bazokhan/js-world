@@ -8,22 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class JavascriptComponent implements OnInit {
   _javascriptModule: Object;
+  jsObjAsArray = ['Loading...'];
+  jsObjAsKeys;
 
-  get jsObjAsArray() {
-    return Object.keys(this._javascriptModule).map((key) => this._javascriptModule[key]);
-  }
-  get jsObjAsKeys() {
-    return Object.keys(this._javascriptModule);
-  }
-
-  constructor(private db: DatabaseService) {
-    this._javascriptModule = db.arrOfModules[0]
-  }
+  constructor(private db: DatabaseService) { }
 
   toggle(obj) {
     obj.completed = !obj.completed;
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.db
+      .arrOfModules()
+      .subscribe( res => {
+        this._javascriptModule = res[0];
+        this.jsObjAsArray = Object.keys(this._javascriptModule).map((key) => this._javascriptModule[key]);
+        this.jsObjAsKeys = Object.keys(this._javascriptModule);
+      } )
+  }
 
 }

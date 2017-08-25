@@ -1,6 +1,7 @@
 import { DatabaseService } from './database.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { JavascriptComponent } from './javascript/javascript.component';
@@ -11,7 +12,8 @@ import { JavascriptComponent } from './javascript/javascript.component';
     JavascriptComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpModule
   ],
   providers: [DatabaseService],
   bootstrap: [AppComponent]
